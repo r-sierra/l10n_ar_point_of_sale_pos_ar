@@ -20,7 +20,6 @@
     'name': 'Terminal Punto de Venta - Talonario por defecto',
     'version': '12.0.0.0.1',
     'category': 'Sales/Point Of Sale',
-    'sequence': 20,
     'summary': 'Talonario predeterminado para Terminal Punto de Venta',
     'description': 'Permite definir el Talonario a utilizar para cada TPV',
     'depends': [
