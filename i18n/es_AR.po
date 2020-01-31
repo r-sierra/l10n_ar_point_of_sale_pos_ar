@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ar_point_of_sale_pos_ar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-31 16:29+0000\n"
+"PO-Revision-Date: 2020-01-31 13:32-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_AR\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: l10n_ar_point_of_sale_pos_ar
+#: model:ir.model,name:l10n_ar_point_of_sale_pos_ar.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración del Punto de Venta"
+
+#. module: l10n_ar_point_of_sale_pos_ar
+#: model:ir.model,name:l10n_ar_point_of_sale_pos_ar.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos del Punto de Venta"
+
+#. module: l10n_ar_point_of_sale_pos_ar
+#: model_terms:ir.ui.view,arch_db:l10n_ar_point_of_sale_pos_ar.pos_config_view_form
+msgid "Point of Sale used in invoices"
+msgstr "Punto de Venta utilizado para facturar"
+
+#. module: l10n_ar_point_of_sale_pos_ar
+#: model:ir.model.fields,field_description:l10n_ar_point_of_sale_pos_ar.field_pos_config__pos_ar_id
+#: model:ir.model.fields,field_description:l10n_ar_point_of_sale_pos_ar.field_pos_order__pos_ar_id
+msgid "Point of sale"
+msgstr "Punto de Venta"
+
+#. module: l10n_ar_point_of_sale_pos_ar
+#: code:addons/l10n_ar_point_of_sale_pos_ar/models/pos_config.py:43
+#, python-format
+msgid "The point of sale number and the point of sale must belong to the same company."
+msgstr "El número de talonario y el Punto de Venta deben pertenecer a la misma compañía."
