@@ -15,8 +15,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class PosOrder(models.Model):
@@ -29,8 +28,15 @@ class PosOrder(models.Model):
         readonly=False
     )
 
-    def _prepare_invoice(self):
-        prepared_invoice = super(PosOrder, self)
-        if self.pos_ar_id.id:
-          prepared_invoice['pos_ar_id'] = self.pos_ar_id.id
-        return prepared_invoice
+    @api.multi
+    def action_pos_order_invoice(self):
+        super(PosOrder, self).action_pos_order_invoice()
+
+        for order in self:
+            if order.invoice_id:
+                inv = order.invoice_id
+                if inv.pos_ar_id:
+                    inv.update({
+                        'denomination_id': inv.get_invoice_denomination().id,
+                        'pos_ar_id': order.pos_ar_id.id
+                    })
