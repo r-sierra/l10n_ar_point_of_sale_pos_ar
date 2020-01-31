@@ -7,13 +7,14 @@
         <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
         <field name="arch" type="xml">
             <div id="iface_invoicing" position="after">
-                <div id="pos_ar_id" class="col-12 col-lg-6 o_setting_box">
+                <div id="pos_ar_id" class="col-12 col-lg-6 o_setting_box"  attrs="{'invisible': [('module_account', '=', False)]}">
                     <div class="o_setting_right_pane">
-                        <label for="pos_ar_id" string="Point of sale"/>
-                        <div class="content-group">
-                            <div class="mt16">
-                                <field name="pos_ar_id"/>
-                            </div>
+                        <label for="pos_ar_id"/>
+                        <div class="text-muted">
+                            Point of Sale used in invoices
+                        </div>
+                        <div class="content-group mt16">
+                            <field name="pos_ar_id"/>
                         </div>
                     </div>
                 </div>
