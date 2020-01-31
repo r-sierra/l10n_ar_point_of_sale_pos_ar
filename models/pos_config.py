@@ -16,10 +16,21 @@
 #
 ##############################################################################
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class PosConfig(models.Model):
     _inherit = 'pos.config'
 
     pos_ar_id = fields.Many2one('pos.ar', string='Point of sale')
+
+    @api.onchange('module_account')
+    def _onchange_module_account(self):
+        super(PosConfig, self)._onchange_module_account()
+        if not self.module_account:
+            self.pos_ar_id = False
+
+    @api.constrains('company_id', 'pos_ar_id')
+    def _check_company_pos_ar(self):
+        if self.pos_ar_id and self.pos_ar_id.company_id.id != self.company_id.id:
+            raise ValidationError(_("The point of sale number and the point of sale must belong to the same company."))
