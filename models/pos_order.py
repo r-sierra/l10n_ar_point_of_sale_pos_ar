@@ -34,7 +34,7 @@ class PosOrder(models.Model):
         super(PosOrder, self).action_pos_order_invoice()
 
         for order in self:
-            if order.invoice_id:
+            if order.invoice_id and order.pos_ar_id:
                 inv = order.invoice_id
                 if inv.pos_ar_id:
                     inv.update({
