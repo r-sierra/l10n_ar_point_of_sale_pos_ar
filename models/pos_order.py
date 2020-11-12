@@ -41,3 +41,4 @@ class PosOrder(models.Model):
                         'denomination_id': inv.get_invoice_denomination().id,
                         'pos_ar_id': order.pos_ar_id.id
                     })
+                    self.env.cr.commit()
